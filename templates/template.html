@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SuperDuperCool Corp</title>
+</head>
+<body>
+	<ul>
+		{% if postes %}
+		{% block content %}
+		{% endblock %}
+		{% else %}
+		<li><a href="/postes">Voir les postes</a></li>
+		{% endif %}
+	</ul>
+	<form action = "http://localhost:5000/uploadcv" method = "POST" 
+		enctype = "multipart/form-data">
+		<input type = "file" name = "file" />
+		<input type = "submit"/>
+	 </form>
+	 {% if error %}
+	 <strong>Erreur : Veuillez entrer un fichier PDF.</strong>
+	 {% endif %}
+</body>
+</html>

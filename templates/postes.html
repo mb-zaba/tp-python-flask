@@ -1,0 +1,15 @@
+{% extends 'template.html' %}
+
+{% block content %}
+{% for poste in postes.values() %}
+<li>
+	<ul>
+		<li>Intitulé : {{ poste["title"] }}</li>
+		<li>Entreprise : {{ poste["company"] }}</li>
+		<li>Description : {{ poste["description"] }}</li>
+		<li>Début : {{ poste["start"] }}</li>
+		<li>Durée (en année, si CDD) : {{ poste["length"] }}</li>
+	</ul>
+</li><br>
+{% endfor %}
+{% endblock %}
